@@ -2,7 +2,7 @@
 using namespace std;
 int main(){
     int arr[10]={4,9,6,2,8,5,1,3,7,10};
-    int a,temp,i,j,flag,high,mid,low,data;
+    int a,temp,i,j,flag,high,mid,low,data,flag2;
     a=sizeof(arr)/sizeof(arr[0]);
     cout <<  "Enter Valude to Search:" << endl;
     cin >> data;
@@ -19,20 +19,23 @@ int main(){
             break;
         }
     }
-    while(mid!=data){
-        low=arr[0];
-        high=arr[-1];
-        mid=arr[a/2];
-        if(mid==data){
-            cout << "Data found" << mid << endl;
-        if(arr[mid]<data){
-            low=mid+1;
+        low=0;
+        high=a-1;
+    while(low<=high){
+        mid=(low+high)/2;
+        if(data==arr[mid]){
+            cout << "data found at position:" << mid << endl;
+            flag2=1;
         }
-        if(arr[]
-        
+        if(data<arr[mid]){
+            high=mid-1;
         }
-            low=mid+1
-
+        else{
+            low=mid+1;        
+        }
+    }
+    if(flag2!=1){
+        cout << "element not found" << endl;
     }
    return 0;
 }
